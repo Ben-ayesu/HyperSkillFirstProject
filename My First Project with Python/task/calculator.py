@@ -7,8 +7,19 @@ items_prices = {
     'Pancake': 80
 }
 
+def earned_amount():
+    print('Earned amount:')
+    for key, value in items_prices.items():
+        print(f'{key}: ${value}')
+    print()
 
-print('Earned amount:')
-for key, value in items_prices.items():
-    print(f'{key}: ${value}')
-print(f'Income ${sum(items_prices.values())}')
+def net_income():
+    Income = sum(items_prices.values())
+    print(f'Income: ${Income}')
+    staff_expenses = input('Staff expenses:')
+    other_expenses = input('Other expenses:')
+    print(int(staff_expenses) + int(other_expenses))
+    print(f'Net income: ${Income - (int(staff_expenses) + int(other_expenses))}')
+
+earned_amount()
+net_income()
